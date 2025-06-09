@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QuantumDraft - Empowering the Digital Future</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <!-- Font Awesome CDN for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
@@ -12,7 +12,7 @@
 
   <header class="header animate-fade-in">
     <div class="logo animate-slide-down">
-      <img src="IMG-20250602-WA0005.png" alt="Quantum Draft Logo" style="height: 80px;" />
+      <img src="{{ url_for('static', filename='IMG-20250602-WA0005.png') }}" alt="Quantum Draft Logo" style="height: 80px;" />
     </div>
     <nav class="nav-links animate-slide-up unique-nav">
       <a href="index.html" class="nav-link"><span>Home</span></a>
@@ -30,7 +30,7 @@
       <button class="btn-animate" onclick="document.getElementById('why-quantumdraft').scrollIntoView({behavior:'smooth'});">Get Started</button>
     </div>
     <div class="main-image animate-pop">
-      <img src="IMG-20250602-WA0005.png" alt="Quantum Draft Logo" style="width: 300px;" />
+      <img src="{{ url_for('static', filename='IMG-20250602-WA0005.png') }}" alt="Quantum Draft Logo" style="width: 300px;" />
     </div>
   </section>
 

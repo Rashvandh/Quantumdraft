@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from flask_mail import Mail, Message
 from dotenv import load_dotenv
@@ -31,7 +31,7 @@ def contact():
         return jsonify({'success': False, 'message': 'All fields are required.'}), 400
 
     try:
-        # Send to site owner
+        # Send email to site owner
         msg = Message(
             subject=f"Contact Form Submission from {name}",
             recipients=[app.config['MAIL_USERNAME']],
@@ -39,7 +39,7 @@ def contact():
         )
         mail.send(msg)
 
-        # Optional: Send confirmation to user
+        # Send confirmation to user
         confirm = Message(
             subject="Thank you for contacting QuantumDraft!",
             recipients=[email],
@@ -51,6 +51,22 @@ def contact():
     except Exception as e:
         print("Mail error:", e)
         return jsonify({'success': False, 'message': 'Failed to send message.'}), 500
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/contact')
+def contact_page():
+    return render_template('contact.html')
+
+@app.route('/team')
+def team_page():
+    return render_template('team.html')
+
+@app.route('/solutions')
+def solutions_page():
+    return render_template('solutions.html')
 
 if __name__ == '__main__':
     app.run(port=3001, debug=True)
