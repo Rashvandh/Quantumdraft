@@ -12,7 +12,7 @@
 
   <header class="header animate-fade-in">
     <div class="logo animate-slide-down">
-      <img src="IMG-20250602-WA0005.png" alt="Quantum Draft Logo" style="height: 50px;" />
+      <img src="IMG-20250602-WA0005.png" alt="Quantum Draft Logo" style="height: 80px;" />
     </div>
     <nav class="nav-links animate-slide-up unique-nav">
       <a href="index.html" class="nav-link"><span>Home</span></a>
@@ -38,26 +38,26 @@
     <h2>Our Core Capabilities</h2>
     <div class="info-cards">
       <div class="card animate-card">
-        <div class="image-box">
-          <img src="assets/web-dev.jpg" alt="Web Development" style="width: 100%; height: 100%; border-radius: 16px;" />
+        <div class="image-box" style="background: #23272f; display: flex; align-items: center; justify-content: center;">
+          <i class="fas fa-laptop-code" style="font-size: 2.5rem; color: aquamarine;"></i>
         </div>
         <p>Web Development & UI/UX</p>
       </div>
       <div class="card animate-card">
-        <div class="image-box">
-          <img src="assets/ai.jpg" alt="AI/ML Automations" style="width: 100%; height: 100%; border-radius: 16px;" />
+        <div class="image-box" style="background: #23272f; display: flex; align-items: center; justify-content: center;">
+          <i class="fas fa-robot" style="font-size: 2.5rem; color: aquamarine;"></i>
         </div>
         <p>AI/ML Automations</p>
       </div>
       <div class="card animate-card" style="animation-delay: 0.2s;">
-        <div class="image-box">
-          <img src="assets/marketing.jpg" alt="Content & Brand Strategy" style="width: 100%; height: 100%; border-radius: 16px;" />
+        <div class="image-box" style="background: #23272f; display: flex; align-items: center; justify-content: center;">
+          <i class="fas fa-lightbulb" style="font-size: 2.5rem; color: aquamarine;"></i>
         </div>
         <p>Content & Brand Strategy</p>
       </div>
       <div class="card animate-card">
-        <div class="image-box">
-          <img src="assets/Digital Outreach.jpeg" alt="Digital Outreach" style="width: 100%; height: 100%; border-radius: 16px;" />
+        <div class="image-box" style="background: #23272f; display: flex; align-items: center; justify-content: center;">
+          <i class="fas fa-bullhorn" style="font-size: 2.5rem; color: aquamarine;"></i>
         </div>
         <p>Digital Outreach</p>
       </div>
@@ -65,17 +65,15 @@
   </section>
 
   <section id="why-quantumdraft" class="about animate-fade-in-up">
-  <h2>
-    <i class="fas fa-bolt"></i>
-    Why QuantumDraft?
-  </h2>
-  <div class="why-box">
+  <div class="why-box-modern">
+    <div class="why-icon">
+      <i class="fas fa-bolt"></i>
+    </div>
+    <h2>Why QuantumDraft?</h2>
     <p>
-      <span class="gradient-text">
-        At QuantumDraft, we believe in the power of technology to transform ideas into reality.
-      </span>
-      <br>
-      Our team combines <span class="aqua">creativity</span>, <span class="aqua">technical expertise</span>, and a passion for <span class="aqua">innovation</span> to deliver solutions that make a difference. Whether you're a startup, a creator, or an established business, we help you harness the latest in AI, automation, and digital strategy to achieve your goals.
+      At <span class="brand">QuantumDraft</span>, we believe in the power of technology to transform ideas into reality.<br>
+      Our team combines <span class="aqua">creativity</span>, <span class="aqua">technical expertise</span>, and a passion for <span class="aqua">innovation</span> to deliver solutions that make a difference.<br>
+      Whether you're a startup, a creator, or an established business, we help you harness the latest in AI, automation, and digital strategy to achieve your goals.
     </p>
     <ul>
       <li><span>🚀</span> Fast, scalable, and secure web platforms</li>
@@ -83,26 +81,24 @@
       <li><span>🎨</span> Unique branding and content strategies</li>
       <li><span>🌐</span> Digital outreach for maximum impact</li>
     </ul>
-    <div class="why-btn-wrap">
-      <a href="contact.html" class="btn-animate">
-        <i class="fas fa-rocket"></i> Start Your Project
-      </a>
-    </div>
+    <a href="contact.html" class="btn-modern">
+      <i class="fas fa-rocket"></i> Start Your Project
+    </a>
   </div>
 </section>
 
   <section class="testimonials animate-fade-in" style="padding:60px 10%; background:black;">
     <h2 style="color:aquamarine; margin-bottom:32px;">What Our Clients Say</h2>
     <div style="display:flex; gap:32px; flex-wrap:wrap; justify-content:center;">
-      <div class="testimonial-card animate-pop">
+      <div class="testimonial-card animate-fade-in-up">
         <p style="font-style:italic;">"QuantumDraft turned our vision into a stunning, functional website. The team is creative, responsive, and truly understands startups."</p>
         <div style="margin-top:16px; font-weight:bold; color:aquamarine;">— Priya S., Startup Founder</div>
       </div>
-      <div class="testimonial-card animate-pop" style="animation-delay:0.1s;">
+      <div class="testimonial-card animate-fade-in-up" style="animation-delay:0.1s;">
         <p style="font-style:italic;">"Their AI automation saved us hours every week. Highly recommend QuantumDraft for any business looking to scale."</p>
         <div style="margin-top:16px; font-weight:bold; color:aquamarine;">— Rahul M., Business Owner</div>
       </div>
-      <div class="testimonial-card animate-pop" style="animation-delay:0.2s;">
+      <div class="testimonial-card animate-fade-in-up" style="animation-delay:0.2s;">
         <p style="font-style:italic;">"The branding and content strategy gave our brand a unique voice. We saw real results in engagement and reach."</p>
         <div style="margin-top:16px; font-weight:bold; color:aquamarine;">— Sneha K., Content Creator</div>
       </div>
@@ -141,18 +137,16 @@
   </footer>
 
   <script>
-window.addEventListener('DOMContentLoaded', function() {
-  const section = document.getElementById('why-quantumdraft');
-  function revealWhy() {
-    const rect = section.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      section.classList.add('revealed');
-      window.removeEventListener('scroll', revealWhy);
+function revealOnScroll() {
+  document.querySelectorAll('.animate-fade-in-up, .animate-fade-in').forEach(function(el) {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 80) {
+      el.classList.add('visible');
     }
-  }
-  window.addEventListener('scroll', revealWhy);
-  revealWhy();
-});
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('DOMContentLoaded', revealOnScroll);
 </script>
 
 </body>
