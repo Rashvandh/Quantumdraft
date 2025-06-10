@@ -1,0 +1,27 @@
+{
+  "name": "quantumdraft",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000Q\u0000u\u0000a\u0000n\u0000t\u0000u\u0000m\u0000D\u0000r\u0000a\u0000f\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rashvandh/QuantumDraft.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Rashvandh/QuantumDraft/issues"
+  },
+  "homepage": "https://github.com/Rashvandh/QuantumDraft#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.3"
+  }
+}

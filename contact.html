@@ -24,14 +24,19 @@
 <section class="info animate-fade-in">
   <h2 class="animate-zoom-in">Let's Talk!</h2>
   <p class="animate-fade-in" style="margin-bottom: 40px;">We'd love to hear about your project, idea, or problem you want solved.<br>Fill out the form below and our team will get back to you soon.</p>
-  <form class="contact-form animate-pop" style="max-width: 500px; margin: 0 auto; text-align: left; background: #18181b; color: #e0e7ef; padding: 32px 24px; border-radius: 16px; box-shadow: 0 4px 24px rgba(59,130,246,0.08);">
+  <form class="contact-form animate-pop" id="contactForm" style="max-width: 500px; margin: 0 auto; text-align: left; background: #18181b; color: #e0e7ef; padding: 32px 24px; border-radius: 16px; box-shadow: 0 4px 24px rgba(59,130,246,0.08);">
     <label for="name">Name</label><br/>
-    <input id="name" name="name" type="text" required style="width: 100%; padding: 12px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #d1d5db; background:#23272f; color:#e0e7ef;" /><br/>
+    <input id="name" name="name" type="text" required minlength="2" style="width: 100%; padding: 12px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #d1d5db; background:#23272f; color:#e0e7ef;" /><br/>
     <label for="email">Email</label><br/>
     <input id="email" name="email" type="email" required style="width: 100%; padding: 12px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #d1d5db; background:#23272f; color:#e0e7ef;" /><br/>
     <label for="message">Message</label><br/>
-    <textarea id="message" name="message" required style="width: 100%; padding: 12px; height: 120px; border-radius: 8px; border: 1px solid #d1d5db; background:#23272f; color:#e0e7ef;"></textarea><br/><br/>
-    <button type="submit" class="btn-animate" style="padding: 12px 28px; background: linear-gradient(90deg,#3b82f6,#6366f1); color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; box-shadow: 0 2px 8px rgba(59,130,246,0.12); transition: transform 0.2s;">Send Message</button>
+    <textarea id="message" name="message" required minlength="10" style="width: 100%; padding: 12px; height: 120px; border-radius: 8px; border: 1px solid #d1d5db; background:#23272f; color:#e0e7ef;"></textarea><br/><br/>
+    <button type="submit" class="btn-animate" style="padding: 12px 28px; background: linear-gradient(90deg,#3b82f6,#6366f1); color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; box-shadow: 0 2px 8px rgba(59,130,246,0.12); transition: transform 0.2s;">
+      <span id="submitText">Send Message</span>
+      <span class="loading-spinner" id="loadingSpinner" style="display:none; width:20px; height:20px; border:3px solid rgba(255,255,255,0.3); border-radius:50%; border-top-color:#fff; animation:spin 1s ease-in-out infinite; margin-left:10px;"></span>
+    </button>
+    <div class="error-message" id="formError" style="color:#ff6b6b; margin-top:12px; display:none;"></div>
+    <div class="success-message" id="formSuccess" style="color:aquamarine; margin-top:12px; display:none;"></div>
   </form>
 </section>
 
@@ -51,26 +56,72 @@
   &copy; 2025 QuantumDraft | All Rights Reserved
 </footer>
 <script>
-document.querySelector('.contact-form').addEventListener('submit', async function(e) {
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const message = document.getElementById('message').value.trim();
+  const submitText = document.getElementById('submitText');
+  const loadingSpinner = document.getElementById('loadingSpinner');
+  const formError = document.getElementById('formError');
+  const formSuccess = document.getElementById('formSuccess');
 
-  const res = await fetch('/api/contact', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, email, message })
-  });
+  // Reset messages
+  formError.style.display = 'none';
+  formSuccess.style.display = 'none';
 
-  const data = await res.json();
-  if(data.success) {
-    alert('Message sent! Thank you.');
-    this.reset();
-  } else {
-    alert('Failed to send message. Please try again later.');
+  // Frontend validation
+  if (name.length < 2) {
+    formError.textContent = 'Name must be at least 2 characters.';
+    formError.style.display = 'block';
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    formError.textContent = 'Invalid email address.';
+    formError.style.display = 'block';
+    return;
+  }
+  if (message.length < 10) {
+    formError.textContent = 'Message must be at least 10 characters.';
+    formError.style.display = 'block';
+    return;
+  }
+
+  // Show loading
+  submitText.textContent = 'Sending...';
+  loadingSpinner.style.display = 'inline-block';
+
+  try {
+    const res = await fetch('http://192.168.74.239:5000/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message })
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      formSuccess.textContent = 'Message sent! Thank you.';
+      formSuccess.style.display = 'block';
+      this.reset();
+    } else {
+      formError.textContent = data.error || 'Failed to send message. Please try again later.';
+      formError.style.display = 'block';
+    }
+  } catch (err) {
+    formError.textContent = 'Failed to send message. Please try again later.';
+    formError.style.display = 'block';
+  } finally {
+    submitText.textContent = 'Send Message';
+    loadingSpinner.style.display = 'none';
   }
 });
+
+// Spinner animation
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes spin { to { transform: rotate(360deg); } }
+`;
+document.head.appendChild(style);
 </script>
 </body>
 </html>
