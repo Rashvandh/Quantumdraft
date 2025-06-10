@@ -92,7 +92,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
   loadingSpinner.style.display = 'inline-block';
 
   try {
-    const res = await fetch('http://192.168.74.239:5000/api/contact', {
+    const res = await fetch('https://quantumdraft-backend.vercel.app/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, message })

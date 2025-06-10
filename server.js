@@ -52,7 +52,8 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
 
-// Client-side fetch example (to be used in your front-end code)
+// Remove or comment out this block before deploying to Vercel
+/*
 fetch('http://localhost:5000/api/contact', {
   method: 'POST',
   headers: {
@@ -73,3 +74,4 @@ fetch('http://localhost:5000/api/contact', {
   }
 })
 .catch(error => console.error('Fetch error:', error));
+*/
