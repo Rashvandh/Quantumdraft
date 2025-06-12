@@ -92,11 +92,11 @@ document.getElementById('contactForm').addEventListener('submit', async function
   loadingSpinner.style.display = 'inline-block';
 
   try {
-    const res = await fetch('https://quantumdraft-backend.vercel.app/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message })
-    });
+const res = await fetch('https://your-app.onrender.com/contact', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ name, email, message })
+});
 
     const data = await res.json();
     if (data.success) {
@@ -114,7 +114,6 @@ document.getElementById('contactForm').addEventListener('submit', async function
     submitText.textContent = 'Send Message';
     loadingSpinner.style.display = 'none';
   }
-});
 
 // Spinner animation
 const style = document.createElement('style');
@@ -122,6 +121,7 @@ style.innerHTML = `
 @keyframes spin { to { transform: rotate(360deg); } }
 `;
 document.head.appendChild(style);
+}
 </script>
 </body>
 </html>
