@@ -92,7 +92,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
   loadingSpinner.style.display = 'inline-block';
 
   try {
-const res = await fetch('https://your-app.onrender.com/contact', {
+const res = await fetch('https://your-app.fly.dev/contact', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ name, email, message })
@@ -121,7 +121,7 @@ style.innerHTML = `
 @keyframes spin { to { transform: rotate(360deg); } }
 `;
 document.head.appendChild(style);
-}
+});
 </script>
 </body>
 </html>

@@ -7,146 +7,159 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Font Awesome CDN for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <!-- Spline 3D Viewer -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.6/build/spline-viewer.js"></script>
 </head>
 <body>
-<header class="header animate-fade-in">
-  <div class="logo animate-slide-down">
-    <img src="IMG-20250602-WA0005.png" alt="Quantum Draft Logo" />
-  </div>
-  <nav class="nav-links animate-slide-up unique-nav">
-    <a href="index.html" class="nav-link"><span>Home</span></a>
-    <a href="solutions.html" class="nav-link"><span>Solutions</span></a>
-    <a href="team.html" class="nav-link"><span>Team</span></a>
-    <a href="contact.html" class="nav-link"><span>Contact</span></a>
-    <div class="nav-glow"></div>
-  </nav>
-</header>
-<section class="main animate-fade-in">
-  <div class="hero-text animate-zoom-in">
-    <h1>Powering Ideas with AI & Innovation</h1>
-    <p>QuantumDraft is a student-led digital powerhouse focused on building intelligent tools for creators, startups, and businesses.</p>
-    <button class="btn-animate" onclick="document.getElementById('why-quantumdraft').scrollIntoView({behavior:'smooth'});">Get Started</button>
-  </div>
-  <div class="main-image animate-pop">
-    <img src="IMG-20250602-WA0005.png" alt="Quantum Draft Logo" />
-  </div>
-</section>
+  <!-- Header -->
+  <header class="header animate-fade-in">
+    <div class="logo animate-slide-down">
+      <img src="IMG-20250602-WA0005.png" alt="Quantum Draft Logo" />
+    </div>
+    <nav class="nav-links animate-slide-up unique-nav">
+      <a href="index.html" class="nav-link"><span>Home</span></a>
+      <a href="solutions.html" class="nav-link"><span>Solutions</span></a>
+      <a href="team.html" class="nav-link"><span>Team</span></a>
+      <a href="contact.html" class="nav-link"><span>Contact</span></a>
+      <div class="nav-glow"></div>
+    </nav>
+  </header>
 
-<section class="info animate-fade-in">
-  <h2>Our Core Capabilities</h2>
-  <div class="info-cards">
-    <div class="card animate-card">
-      <div class="image-box">
-        <i class="fas fa-laptop-code"></i>
+  <!-- Hero/Main Section with 3D Scene -->
+  <section class="main animate-fade-in">
+    <spline-viewer url="https://prod.spline.design/Hb1UysQhlfAD1Cmp/scene.splinecode"></spline-viewer>
+    <div class="hero-text animate-zoom-in">
+      <h1>Powering Ideas with AI & Innovation</h1>
+      <p>QuantumDraft is a student-led digital powerhouse focused on building intelligent tools for creators, startups, and businesses.</p>
+      <button class="btn-animate" onclick="document.getElementById('why-quantumdraft').scrollIntoView({behavior:'smooth'});">Get Started</button>
+    </div>
+    <div class="main-image animate-pop">
+      <img src="IMG-20250602-WA0005.png" alt="Quantum Draft Logo" />
+    </div>
+  </section>
+
+  <!-- Core Capabilities -->
+  <section class="info animate-fade-in">
+    <h2>Our Core Capabilities</h2>
+    <div class="info-cards">
+      <div class="card animate-card">
+        <div class="image-box">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <p>Web Development & UI/UX</p>
       </div>
-      <p>Web Development & UI/UX</p>
-    </div>
-    <div class="card animate-card">
-      <div class="image-box">
-        <i class="fas fa-robot"></i>
+      <div class="card animate-card">
+        <div class="image-box">
+          <i class="fas fa-robot"></i>
+        </div>
+        <p>AI/ML Automations</p>
       </div>
-      <p>AI/ML Automations</p>
-    </div>
-    <div class="card animate-card" style="animation-delay: 0.2s;">
-      <div class="image-box">
-        <i class="fas fa-lightbulb"></i>
+      <div class="card animate-card" style="animation-delay: 0.2s;">
+        <div class="image-box">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <p>Content & Brand Strategy</p>
       </div>
-      <p>Content & Brand Strategy</p>
-    </div>
-    <div class="card animate-card">
-      <div class="image-box">
-        <i class="fas fa-bullhorn"></i>
+      <div class="card animate-card">
+        <div class="image-box">
+          <i class="fas fa-bullhorn"></i>
+        </div>
+        <p>Digital Outreach</p>
       </div>
-      <p>Digital Outreach</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="why-quantumdraft" class="about animate-fade-in-up" style="display: flex; justify-content: center;">
-  <div class="why-box-modern" style="margin: 0 auto;">
-    <h2 style="text-align:center;">
-      <i class="fas fa-bolt"></i>
-      Why QuantumDraft?
-    </h2>
-    <p>
-      <span class="gradient-text">
-        At QuantumDraft, we believe in the power of technology to transform ideas into reality.
-      </span>
-      <br>
-      Our team combines <span class="aqua">creativity</span>, <span class="aqua">technical expertise</span>, and a passion for <span class="aqua">innovation</span> to deliver solutions that make a difference. Whether you're a startup, a creator, or an established business, we help you harness the latest in AI, automation, and digital strategy to achieve your goals.
-    </p>
-    <ul>
-      <li><span>🚀</span> Fast, scalable, and secure web platforms</li>
-      <li><span>🤖</span> Custom AI and automation for productivity</li>
-      <li><span>🎨</span> Unique branding and content strategies</li>
-      <li><span>🌐</span> Digital outreach for maximum impact</li>
-    </ul>
-    <div class="why-btn-wrap" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
-      <button class="btn-animate" style="background: linear-gradient(90deg,aquamarine,#3b82f6); color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; padding: 12px 28px; box-shadow: 0 2px 8px rgba(59,130,246,0.12); cursor: pointer;"
-        onclick="window.location.href='contact.html'">
-        <i class="fas fa-paper-plane"></i> Start Your Project
-      </button>
+  <!-- Why QuantumDraft -->
+  <section id="why-quantumdraft" class="about animate-fade-in-up" style="display: flex; justify-content: center;">
+    <div class="why-box-modern" style="margin: 0 auto;">
+      <h2 style="text-align:center;">
+        <i class="fas fa-bolt"></i>
+        Why QuantumDraft?
+      </h2>
+      <p>
+        <span class="gradient-text">
+          At QuantumDraft, we believe in the power of technology to transform ideas into reality.
+        </span>
+        <br>
+        Our team combines <span class="aqua">creativity</span>, <span class="aqua">technical expertise</span>, and a passion for <span class="aqua">innovation</span> to deliver solutions that make a difference. Whether you're a startup, a creator, or an established business, we help you harness the latest in AI, automation, and digital strategy to achieve your goals.
+      </p>
+      <ul>
+        <li><span>🚀</span> Fast, scalable, and secure web platforms</li>
+        <li><span>🤖</span> Custom AI and automation for productivity</li>
+        <li><span>🎨</span> Unique branding and content strategies</li>
+        <li><span>🌐</span> Digital outreach for maximum impact</li>
+      </ul>
+      <div class="why-btn-wrap" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+        <button class="btn-animate" style="background: linear-gradient(90deg,aquamarine,#3b82f6); color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; padding: 12px 28px; box-shadow: 0 2px 8px rgba(59,130,246,0.12); cursor: pointer;"
+          onclick="window.location.href='contact.html'">
+          <i class="fas fa-paper-plane"></i> Start Your Project
+        </button>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="testimonials animate-fade-in">
-  <h2>What Our Clients Say</h2>
-  <div class="testimonials-list testimonials-center">
-    <div class="testimonial-card animate-pop">
-      <p>"QuantumDraft turned our vision into a stunning, functional website. The team is creative, responsive, and truly understands startups."</p>
-      <div class="testimonial-author">— Priya S., Startup Founder</div>
+  <!-- Testimonials -->
+  <section class="testimonials animate-fade-in">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials-list testimonials-center">
+      <div class="testimonial-card animate-pop">
+        <p>"QuantumDraft turned our vision into a stunning, functional website. The team is creative, responsive, and truly understands startups."</p>
+        <div class="testimonial-author">— Priya S., Startup Founder</div>
+      </div>
+      <div class="testimonial-card animate-pop" style="animation-delay:0.1s;">
+        <p>"Their AI automation saved us hours every week. Highly recommend QuantumDraft for any business looking to scale."</p>
+        <div class="testimonial-author">— Rahul M., Business Owner</div>
+      </div>
+      <div class="testimonial-card animate-pop" style="animation-delay:0.2s;">
+        <p>"The branding and content strategy gave our brand a unique voice. We saw real results in engagement and reach."</p>
+        <div class="testimonial-author">— Sneha K., Content Creator</div>
+      </div>
     </div>
-    <div class="testimonial-card animate-pop" style="animation-delay:0.1s;">
-      <p>"Their AI automation saved us hours every week. Highly recommend QuantumDraft for any business looking to scale."</p>
-      <div class="testimonial-author">— Rahul M., Business Owner</div>
+  </section>
+
+  <!-- Inspirational Quote -->
+  <section class="quote animate-fade-in">
+    <p><em>"We’re not just building websites or tools — we’re crafting digital revolutions for those who dare to dream big."</em></p>
+    <div class="author">- The QuantumDraft Founders</div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta animate-slide-up">
+    <div class="cta-container">
+      <div>
+        <h3>Launch your idea with QuantumDraft</h3>
+        <p>Join the creators, founders, and teams trusting us to turn ideas into scalable digital platforms.</p>
+      </div>
     </div>
-    <div class="testimonial-card animate-pop" style="animation-delay:0.2s;">
-      <p>"The branding and content strategy gave our brand a unique voice. We saw real results in engagement and reach."</p>
-      <div class="testimonial-author">— Sneha K., Content Creator</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="quote animate-fade-in">
-  <p><em>"We’re not just building websites or tools — we’re crafting digital revolutions for those who dare to dream big."</em></p>
-  <div class="author">- The QuantumDraft Founders</div>
-</section>
+  <!-- Socials -->
+  <section class="socials animate-fade-in">
+    <h3>Connect with us</h3>
+    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+  </section>
 
-<section class="cta animate-slide-up">
-  <div class="cta-container">
-    <div>
-      <h3>Launch your idea with QuantumDraft</h3>
-      <p>Join the creators, founders, and teams trusting us to turn ideas into scalable digital platforms.</p>
-    </div>
-  </div>
-</section>
+  <!-- Footer -->
+  <footer class="footer animate-fade-in">
+    &copy; 2025 QuantumDraft | All Rights Reserved
+  </footer>
 
-<section class="socials animate-fade-in">
-  <h3>Connect with us</h3>
-  <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-  <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-  <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-</section>
-
-<footer class="footer animate-fade-in">
-  &copy; 2025 QuantumDraft | All Rights Reserved
-</footer>
-
-<script>
-window.addEventListener('DOMContentLoaded', function() {
-  const section = document.getElementById('why-quantumdraft');
-  function revealWhy() {
-    const rect = section.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      section.classList.add('revealed');
-      window.removeEventListener('scroll', revealWhy);
-    }
-  }
-  window.addEventListener('scroll', revealWhy);
-  revealWhy();
-});
-</script>
-
+  <!-- Reveal Animation Script -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const section = document.getElementById('why-quantumdraft');
+      function revealWhy() {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('revealed');
+          window.removeEventListener('scroll', revealWhy);
+        }
+      }
+      window.addEventListener('scroll', revealWhy);
+      revealWhy();
+    });
+  </script>
 </body>
 </html>
