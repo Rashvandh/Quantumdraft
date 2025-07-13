@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Solutions - QuantumDraft</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
 <header class="header animate-fade-in">
   <div class="logo animate-slide-down">
-    <img src="IMG-20250602-WA0005.png" alt="Quantum Draft Logo" style="height: 80px;" />
+        <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Quantum Draft Logo" style="height: 110px;" />
   </div>
   <nav class="nav-links animate-slide-up unique-nav">
     <a href="index.html" class="nav-link"><span>Home</span></a>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - QuantumDrafAt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Font Awesome for icons (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+    <header class="header animate-fade-in">
+        <div class="logo animate-slide-down">
+                <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Quantum Draft Logo" style="height: 110px;" />
+        </div>
+        <nav class="nav-links animate-slide-up unique-nav">
+            <a href="index.html" class="nav-link"><span>Home</span></a>
+            <a href="solutions.html" class="nav-link"><span>Solutions</span></a>
+            <a href="team.html" class="nav-link"><span>Team</span></a>
+            <a href="contact.html" class="nav-link"><span>Contact</span></a>
+            <div class="nav-glow"></div>
+        </nav>
+    </header>
+
+    <section class="info animate-fade-in">
+        <h2>Contact Us</h2>
+        <form class="contact-form" action="/submit" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="solution">Solution Required</label>
+            <select id="solution" name="solution" required>
+                <option value="">Select...</option>
+                <option value="Website Design">Website Design</option>
+                <option value="AI Chatbot">AI Chatbot</option>
+                <option value="Automation Workflow">Automation Workflow</option>
+                <option value="Social Media Strategy">Social Media Strategy</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit"><i class="fas fa-paper-plane"></i> Submit</button>
+        </form>
+    </section>
+
+    <section class="socials animate-fade-in">
+        <h3>Connect with us</h3>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+    </section>
+
+    <footer class="footer animate-fade-in">
+        &copy; 2025 QuantumDraft | All Rights Reserved
+    </footer>
+</body>
+
+</html>

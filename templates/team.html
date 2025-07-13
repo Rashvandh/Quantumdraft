@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meet the Team - QuantumDraft</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
 <header class="header animate-fade-in">
   <div class="logo animate-slide-down">
-    <img src="IMG-20250602-WA0005.png" alt="Quantum Draft Logo" style="height: 80px;" />
+<img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Quantum Draft Logo" style="height: 110px;" />
   </div>
   <nav class="nav-links animate-slide-up unique-nav">
     <a href="index.html" class="nav-link"><span>Home</span></a>
@@ -27,25 +28,19 @@
       <div class="image-box" style="background: #23272f; display: flex; align-items: center; justify-content: center;">
         <i class="fas fa-code" style="font-size: 2.5rem; color: aquamarine;"></i>
       </div>
-      <p><strong>Rashvandh.A </strong><br/>Full Stack Developer</p>
+      <p><strong>Rashvandh.A </strong><br/>Full Stack Developer & AIML Automation Architect</p>
     </div>
     <div class="card animate-card" style="animation-delay: 0.1s;">
       <div class="image-box" style="background: #23272f; display: flex; align-items: center; justify-content: center;">
         <i class="fas fa-lightbulb" style="font-size: 2.5rem; color: aquamarine;"></i>
       </div>
-      <p><strong>Raagvi A.N</strong><br/>Content Strategist</p>
+      <p><strong>Raagvi A.N</strong><br/>CRM & Influencer marketing</p>
     </div>
     <div class="card animate-card" style="animation-delay: 0.2s;">
       <div class="image-box" style="background: #23272f; display: flex; align-items: center; justify-content: center;">
         <i class="fas fa-paint-brush" style="font-size: 2.5rem; color: aquamarine;"></i>
       </div>
       <p><strong>Divya T.K</strong><br/>UI Designer & Branding</p>
-    </div>
-    <div class="card animate-card" style="animation-delay: 0.3s;">
-      <div class="image-box" style="background: #23272f; display: flex; align-items: center; justify-content: center;">
-        <i class="fas fa-robot" style="font-size: 2.5rem; color: aquamarine;"></i>
-      </div>
-      <p><strong>Diyamathan</strong><br/>Automation Architect</p>
     </div>
     <div class="card animate-card" style="animation-delay: 0.4s;">
       <div class="image-box" style="background: #23272f; display: flex; align-items: center; justify-content: center;">
